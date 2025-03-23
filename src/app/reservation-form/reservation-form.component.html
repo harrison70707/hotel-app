@@ -2,38 +2,45 @@
     
     <div>
         <label>CHECK-IN DATE:</label>
-        <input type="date" formControlName="checkInDate" required>
+        <input type="date" formControlName="checkInDate">
+        <div *ngIf="reservationForm.get('checkInDate')?.invalid && reservationForm.get('checkInDate')?.touched">
+            CHECK-IN DATE is required and must be a valid date.
+        </div>
     </div>
-    
-    <button type="submit">Submit</button>
 
     <div>
         <label>CHECK-Out DATE:</label>
-        <input type="date" formControlName="checkOutDate" required>
+        <input type="date" formControlName="checkOutDate">
+        <div *ngIf="reservationForm.get('checkOutDate')?.invalid && reservationForm.get('checkOutDate')?.touched">
+            CHECK-Out DATE is required and must be a valid date.
+        </div>
     </div>
-    
-    <button type="submit">Submit</button>
     
     <div>
         <label>GUEST NAME:</label>
-        <input type="text" formControlName="guestName" required>
+        <input type="text" formControlName="guestName">
+        <div *ngIf="reservationForm.get('guestName')?.invalid && reservationForm.get('guestName')?.touched">
+            GUEST NAME is required and must be a valid date.
+        </div>
     </div>
-    
-    <button type="submit">Submit</button>
 
     <div>
         <label>GUEST EMAIL:</label>
-        <input type="email" formControlName="guestEmail" required>
+        <input type="email" formControlName="guestEmail">
+        <div *ngIf="reservationForm.get('guestEmail')?.invalid && reservationForm.get('guestEmail')?.touched">
+            Email is required and must be a valid date.
+        </div>
     </div>
-    
-    <button type="submit">Submit</button>
 
     <div>
         <label>ROOM NUMBER:</label>
-        <input type="number" formControlName="roomNumber" required>
+        <input type="number" formControlName="roomNumber">
+        <div *ngIf="reservationForm.get('roomNumber')?.invalid && reservationForm.get('roomNumber')?.touched">
+            ROOM NUMBER is required and must be a valid date.
+        </div>
     </div>
     
-    <button type="submit">Submit</button>
+    <button type="submit" [disabled]="reservationForm.invalid">Submit</button>
     
 </form>
 
