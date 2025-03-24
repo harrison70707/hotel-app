@@ -9,6 +9,12 @@ export class ReservationService {
 
   private reservations: Reservation[] = [];
 
+  constructor() {
+    // Retrieve reservations from local storage
+    let savedReservations = localStorage.getItem('reservations');
+      this.reservations = savedReservations ? JSON.parse(savedReservations) : [];
+    }
+
   getReservations(): Reservation[] {
     return this.reservations;
   }
