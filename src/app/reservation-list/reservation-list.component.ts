@@ -20,4 +20,12 @@ export class ReservationListComponent implements OnInit {
       console.error('Error fetching reservations:', error);
     }
   }
+
+  deleteReservation(id: string){
+    this.reservationService.deleteReservation(id);
+  }
+
+
+
+
 }
